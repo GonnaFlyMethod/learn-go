@@ -1,4 +1,4 @@
-package main
+package itteration
 
 import "testing"
 
@@ -18,4 +18,11 @@ func TestRepeat(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 
+}
+
+func BenchmarkRepeat(b *testing.B) {
+	var N int = 1000000
+	for i := 0 ;i < N; i++{
+		Repeat("a", 50)
+	}
 }
